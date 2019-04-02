@@ -8,7 +8,12 @@
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.3"
+    "react-native": "0.59.3",
+    "react-navigation": "3.6.0",
+    "moment": "2.24.0",
+    "react-native-config": "^0.11.7",
+    "mobx": "5.9.4",
+    "mobx-react": "5.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -16,7 +21,10 @@
     "babel-jest": "^24.6.0",
     "jest": "^24.6.0",
     "metro-react-native-babel-preset": "^0.53.1",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "16.8.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-react": "^7.12.4"
   },
   "jest": {
     "preset": "react-native"
