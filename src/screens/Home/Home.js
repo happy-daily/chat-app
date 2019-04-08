@@ -1,14 +1,14 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from './HomeScreen';
+import ChatScreen from './ChatScreen';
 import PersonalScreen from './PersonalScreen';
 import ExploreScreen from "./ExploreScreen";
 
 const routeConfigs = {
-  Home: {
-    screen: HomeScreen,
+  Chat: {
+    screen: ChatScreen,
   },
   Explore: {
     screen: ExploreScreen,
@@ -22,22 +22,25 @@ const drawerNavigatorConfig = {
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
       const { routeName } = navigation.state;
-      let IconComponent = Ionicons;
       let iconName;
       switch (routeName) {
-        case 'Home': {
-          iconName = `md-information-circle${focused ? '' : '-outline'}`;
+        case 'Chat': {
+          iconName = `logo-snapchat`;
           break;
         }
         case 'Explore': {
-          iconName = `md-add-circle-outline`;
+          iconName = `md-search`;
           break;
         }
         case 'Personal': {
-          iconName = `md-heart`;
+          iconName = `md-person`;
+          break;
+        }
+        default: {
+          iconName = '';
         }
       }
-      return <IconComponent name={iconName} size={25} color={tintColor} />;
+      return <Icon name={iconName} size={25} color={tintColor} />;
     },
   }),
   tabBarOptions: {

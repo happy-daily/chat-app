@@ -29,5 +29,10 @@ module.exports = {
     "spaced-comment": 1,
     "react/jsx-indent": 1,
     "no-param-reassign": 1,
+    "parserOptions": {
+      "ecmaFeatures": {
+        "legacyDecorators": true
+      }
+    }
   }
 };
