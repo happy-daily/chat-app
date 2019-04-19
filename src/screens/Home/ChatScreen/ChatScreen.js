@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, StatusBar } from 'react-native';
 import { observer } from 'mobx-react/native';
 import ChatScreenStore from "./ChatScreenStore";
 

@@ -19,6 +19,7 @@ const routeConfigs = {
 };
 
 const drawerNavigatorConfig = {
+  initialRouteName: 'Explore',
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
       const { routeName } = navigation.state;

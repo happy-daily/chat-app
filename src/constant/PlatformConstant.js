@@ -1,4 +1,5 @@
 import { Dimensions, Platform, StatusBar } from 'react-native';
+const window = Dimensions.get('window');
 
 export const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 0 : StatusBar.currentHeight;
 export const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
