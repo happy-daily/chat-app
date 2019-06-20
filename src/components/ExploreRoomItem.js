@@ -61,16 +61,24 @@ export default class ExploreRoomItem extends Component {
             />
             <View style={{ width: 80, height: 20, flexDirection: 'row' }}>
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Image
-                  source={images.ic_delete}
-                  style={{ width: 15, height: 15, borderRadius: 15/2, resizeMode: 'stretch', borderWidth: 1, borderColor: '#ffffff' }}
-                />
-                <Image
-                  source={images.ic_delete}
-                  style={{ width: 15, height: 15, borderRadius: 15/2, resizeMode: 'stretch', borderWidth: 1, borderColor: '#ffffff', marginLeft: -4 }}/>
-                <Image
-                  source={images.ic_delete}
-                  style={{ width: 15, height: 15, borderRadius: 15/2, resizeMode: 'stretch', borderWidth: 1, borderColor: '#ffffff', marginLeft: -4 }}/>
+                <View style={{ borderWidth: 1/2, borderColor: '#ffffff', borderRadius: 16/2 }}>
+                  <Image
+                    source={images.ic_delete}
+                    style={{ width: 15, height: 15, resizeMode: 'stretch' }}
+                  />
+                </View>
+                <View style={{ borderWidth: 1/2, borderColor: '#ffffff', borderRadius: 15/2, marginLeft: -5 }}>
+                  <Image
+                    source={images.ic_delete}
+                    style={{ width: 15, height: 15, resizeMode: 'stretch' }}
+                  />
+                </View>
+                <View style={{ borderWidth: 1/2, borderColor: '#ffffff', borderRadius: 15/2, marginLeft: -5 }}>
+                  <Image
+                    source={images.ic_delete}
+                    style={{ width: 15, height: 15, resizeMode: 'stretch' }}
+                  />
+                </View>
               </View>
               <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 10 }}>
                 <View style={{ width: 5, height: 5, borderRadius: 5/2, backgroundColor: 'green' }}/>
