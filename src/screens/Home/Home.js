@@ -19,7 +19,7 @@ const routeConfigs = {
 };
 
 const drawerNavigatorConfig = {
-  initialRouteName: 'Explore',
+  initialRouteName: 'Chat',
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
       const { routeName } = navigation.state;

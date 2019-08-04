@@ -3,6 +3,8 @@ import { Text, View, TouchableOpacity, StatusBar } from 'react-native';
 import { observer } from 'mobx-react/native';
 import ChatScreenStore from "./ChatScreenStore";
 
+import * as Facebook  from 'expo-facebook';
+
 @observer
 export default class ChatScreen extends Component {
   constructor(props) {
@@ -27,7 +29,26 @@ export default class ChatScreen extends Component {
             backgroundColor: 'tomato',
             borderRadius: 5,
           }}
-          onPress={() => {}}
+          onPress={async () => {
+            try {
+              const {
+                type,
+                token,
+                expires,
+                permissions,
+                declinedPermissions,
+              } = await Facebook.logInWithReadPermissionsAsync('488310225262048');
+              console.log('-------------fb login ',
+                `type: ${type}`,
+                `token: ${token}`,
+                `expires: ${expires}`,
+                `permissions: ${permissions}`,
+                `declinedPermissions: ${declinedPermissions}`
+              );
+            } catch (err) {
+              console.log('-----------fb login err:',err);
+            }
+          }}
         >
           <Text style={{ color: '#ffffff' }}>Chat Now</Text>
         </TouchableOpacity>

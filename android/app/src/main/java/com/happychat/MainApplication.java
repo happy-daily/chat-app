@@ -2,17 +2,29 @@ package com.happychat;
 
 import android.app.Application;
 
+import com.facebook.FacebookSdk;
 import com.facebook.react.ReactApplication;
+import com.happychat.generated.BasePackageList;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import org.unimodules.adapters.react.ModuleRegistryAdapter;
+import org.unimodules.adapters.react.ReactModuleRegistryProvider;
+import org.unimodules.core.BasePackage;
+import org.unimodules.core.ModuleRegistry;
+import org.unimodules.core.interfaces.SingletonModule;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
+  private ReactModuleRegistryProvider moduleRegistryProvider = new ReactModuleRegistryProvider(
+          new BasePackageList().getPackageList(),
+          Arrays.<SingletonModule>asList()
+  );
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -24,7 +36,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNGestureHandlerPackage()
+              new RNGestureHandlerPackage(),
+              new ModuleRegistryAdapter(moduleRegistryProvider)
       );
     }
 
@@ -43,5 +56,6 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    FacebookSdk.sdkInitialize(getApplicationContext());
   }
 }
