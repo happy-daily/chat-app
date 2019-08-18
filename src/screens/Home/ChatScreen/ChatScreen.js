@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, StatusBar } from 'react-native';
 import { observer } from 'mobx-react/native';
 import ChatScreenStore from "./ChatScreenStore";
+import Network from '../../../network';
 
 import * as Facebook  from 'expo-facebook';
 
@@ -31,20 +32,18 @@ export default class ChatScreen extends Component {
           }}
           onPress={async () => {
             try {
-              const {
-                type,
-                token,
-                expires,
-                permissions,
-                declinedPermissions,
-              } = await Facebook.logInWithReadPermissionsAsync('488310225262048');
-              console.log('-------------fb login ',
-                `type: ${type}`,
-                `token: ${token}`,
-                `expires: ${expires}`,
-                `permissions: ${permissions}`,
-                `declinedPermissions: ${declinedPermissions}`
-              );
+              // const {
+              //   type,
+              //   token,
+              //   expires,
+              //   permissions,
+              //   declinedPermissions,
+              // } = await Facebook.logInWithReadPermissionsAsync('488310225262048', {
+              //   permissions: ['public_profile'],
+              // });
+              const loginRes = await Network.post('/facebook/login', {
+                access_token: 'EAAG8HZAWEVeABAOtB3NlEal4G0e453k8kW6cdWRlDLdFAFK9CpQJaIn4AaJsHoARsdpROy45gzHu4yQUjlTZB9AHkgnoBK38n1T9Fqp5CYETuI9wE8CXE2hXwMs3uEgyUpYFxI5Td3L4PlsRERZBlLRKDxcEvYFQoAmOxjTgbMTeOLZADJ0zzFfKxICIDDnWDzwC2MWG9ZBJs3ZCIj4rCKLgsmTBks3m8ZD',
+              });
             } catch (err) {
               console.log('-----------fb login err:',err);
             }

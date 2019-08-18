@@ -12,6 +12,7 @@
     "mobx": "5.9.4",
     "mobx-react": "5.4.3",
     "moment": "2.24.0",
+    "querystring": "^0.2.0",
     "react": "16.8.3",
     "react-native": "0.59.3",
     "react-native-config": "^0.11.7",
