@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native';
-import images from '../resource/images';
-import {WINDOW_WIDTH} from "../constant/PlatformConstant";
+import images from '../../../../resource/images';
+import {WINDOW_WIDTH} from "../../../../constant/PlatformConstant";
 
 export default class ExploreRoomItem extends Component {
   constructor(props) {

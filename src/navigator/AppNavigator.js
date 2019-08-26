@@ -1,4 +1,5 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import React from "react";
 import {
   Image,
   Animated,
@@ -9,6 +10,7 @@ import { APPBAR_HEIGHT, STATUSBAR_HEIGHT } from '../constant/PlatformConstant';
 import images from '../resource/images';
 
 import Home from '../screens/Home';
+import LoginScreen from "../screens/Home/LoginScreen/LoginScreen";
 
 const routeConfigs = {
   Home: {
@@ -16,11 +18,14 @@ const routeConfigs = {
     navigationOptions: {
       header: null,
     },
-  }
+  },
+  Login: {
+    screen: LoginScreen,
+  },
 };
 
 const stackNavigatorConfig = {
-  initialRouteName: 'Home',
+  initialRouteName: 'Login',
   headerMode: 'screen',
   cardStyle: {
     backgroundColor: 'rgba(0,0,0,0)',
@@ -98,6 +103,6 @@ const stackNavigatorConfig = {
   }),
 };
 
-const AppNavigator =  createStackNavigator(routeConfigs, stackNavigatorConfig);
+const AppNavigator = createStackNavigator(routeConfigs, stackNavigatorConfig);
 
 export default createAppContainer(AppNavigator);

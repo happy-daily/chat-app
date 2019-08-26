@@ -14,6 +14,8 @@ export default class ChatScreen extends Component {
   }
 
   render() {
+    const { navigation }  = this.props;
+
     return (
       <View style={{ flex: 1, alignItems: 'center', paddingTop: 50, paddingHorizontal: 60 }}>
         <Text style={{ fontWeight: 'bold', fontSize: 26 }}>Start a Chat</Text>
@@ -31,22 +33,7 @@ export default class ChatScreen extends Component {
             borderRadius: 5,
           }}
           onPress={async () => {
-            try {
-              // const {
-              //   type,
-              //   token,
-              //   expires,
-              //   permissions,
-              //   declinedPermissions,
-              // } = await Facebook.logInWithReadPermissionsAsync('488310225262048', {
-              //   permissions: ['public_profile'],
-              // });
-              const loginRes = await Network.post('/facebook/login', {
-                access_token: 'EAAG8HZAWEVeABAOtB3NlEal4G0e453k8kW6cdWRlDLdFAFK9CpQJaIn4AaJsHoARsdpROy45gzHu4yQUjlTZB9AHkgnoBK38n1T9Fqp5CYETuI9wE8CXE2hXwMs3uEgyUpYFxI5Td3L4PlsRERZBlLRKDxcEvYFQoAmOxjTgbMTeOLZADJ0zzFfKxICIDDnWDzwC2MWG9ZBJs3ZCIj4rCKLgsmTBks3m8ZD',
-              });
-            } catch (err) {
-              console.log('-----------fb login err:',err);
-            }
+            navigation.navigate('Login');
           }}
         >
           <Text style={{ color: '#ffffff' }}>Chat Now</Text>

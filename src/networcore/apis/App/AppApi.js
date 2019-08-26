@@ -8,7 +8,7 @@ export default class AppApi extends BaseApi {
 
   getBaseUrl(env) {
     const host = env === 'development' ? HOST_STG_ID : HOST_PRD_ID;
-    const schema = 'https';
+    const schema = 'http';
     return new BaseUrl({ schema, host });
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, FlatList } from 'react-native';
 import {toJS} from 'mobx';
 import { observer } from 'mobx-react/native';
-import { ExploreRoomItem } from '../../../components';
+import ExploreRoomItem from './component/ExploreRoomItem';
 import ExploreScreenStore from "./ExploreScreenStore";
 
 @observer

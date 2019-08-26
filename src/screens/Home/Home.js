@@ -15,7 +15,7 @@ const routeConfigs = {
   },
   Personal: {
     screen: PersonalScreen,
-  }
+  },
 };
 
 const drawerNavigatorConfig = {

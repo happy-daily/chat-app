@@ -1,5 +1,5 @@
-import ExploreRoomItem from './ExploreRoomItem';
+import TextInputComp from './TextInputComp';
 
 export {
-  ExploreRoomItem
-}
+  TextInputComp,
+};
