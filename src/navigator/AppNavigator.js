@@ -25,7 +25,7 @@ const routeConfigs = {
 };
 
 const stackNavigatorConfig = {
-  initialRouteName: 'Login',
+  initialRouteName: 'Home',
   headerMode: 'screen',
   cardStyle: {
     backgroundColor: 'rgba(0,0,0,0)',

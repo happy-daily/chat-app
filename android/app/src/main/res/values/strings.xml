@@ -1,4 +1,5 @@
 <resources>
+	<string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">deployment-key-here</string>
     <string name="app_name">happyChat</string>
     <string name="facebook_app_id">488310225262048</string>
     <string name="fb_login_protocol_scheme">fb488310225262048</string>

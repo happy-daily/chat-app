@@ -21,11 +21,18 @@ export default class TextInputComp extends Component<Props, State> {
   }
 
   render() {
+    const {
+      style,
+      placeholder,
+      onChangeText,
+    } = this.props;
     return (
       <View style={{
-        height: 50, width: '100%',
-        ...this.props.style,
-      }}>
+        height: 55,
+        width: '100%',
+        ...style,
+      }}
+      >
         <TouchableOpacity
           style={{
             height: 50,
@@ -35,13 +42,13 @@ export default class TextInputComp extends Component<Props, State> {
           }}
         >
           <TextInput
-            placeholder={this.props.placeholder}
+            placeholder={placeholder}
             value={this.state.text}
             onChangeText={(text: string) => {
               this.setState({
                 text,
               });
-              this.props.onChangeText && this.props.onChangeText(text);
+              onChangeText && onChangeText(text);
             }}
           />
         </TouchableOpacity>
