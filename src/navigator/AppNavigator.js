@@ -21,6 +21,9 @@ const routeConfigs = {
   },
   Login: {
     screen: LoginScreen,
+    navigationOptions: {
+      title: 'Login',
+    },
   },
 };
 

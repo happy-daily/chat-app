@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, TextInput, StyleSheet, View } from 'react-native';
+import {
+  TouchableOpacity,
+  TextInput,
+  StyleSheet,
+  View,
+} from 'react-native';
 
 type Props = {
   onChangeText: (text: string) => void,
@@ -48,7 +53,9 @@ export default class TextInputComp extends Component<Props, State> {
               this.setState({
                 text,
               });
-              onChangeText && onChangeText(text);
+              if (onChangeText) {
+                onChangeText(text);
+              }
             }}
           />
         </TouchableOpacity>
