@@ -17,7 +17,7 @@ export default class LoginScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', paddingHorizontal: 10 }}>
+      <View style={{ flex: 1, alignItems: 'center', paddingHorizontal: 10, backgroundColor: '#ffffff' }}>
         <View style={{ width: 100, height: 100, backgroundColor: 'red', margin: 10 }} />
         <Text style={{ fontWeight: 'bold', fontSize: 26 }}>Login</Text>
         <TextInputComp

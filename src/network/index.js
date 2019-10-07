@@ -1,6 +1,6 @@
 
 
-import NetworkCore from "../networcore/index";
+import NetworkCore from "../networkcore/index";
 
 let holder = null;
 

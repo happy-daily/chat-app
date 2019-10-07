@@ -28,7 +28,7 @@ export default class TextInputComp extends Component<Props, State> {
     } = this.props;
     return (
       <View style={{
-        height: 55,
+        height: 50,
         width: '100%',
         ...style,
       }}

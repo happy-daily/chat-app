@@ -7371,6 +7371,15 @@ send@0.16.2:
     range-parser "~1.2.0"
     statuses "~1.4.0"
 
+sendbird@^3.0.107:
+  version "3.0.107"
+  resolved "https://registry.yarnpkg.com/sendbird/-/sendbird-3.0.107.tgz#593aa129127681c3d7450dc8f603d787b8e0fa83"
+  integrity sha512-M+X2zvOSBHUvGv/Q9B2q1SU94wqQRupuOXqKt89subP0owQQ9BXRAOy88ButC+RuRf3sqAqk8pT9+s6DYy2JVw==
+  dependencies:
+    agentkeepalive "2.2.0"
+    ws "6.0.0"
+    xhr2 "0.1.4"
+
 serialize-error@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/serialize-error/-/serialize-error-2.1.0.tgz#50b679d5635cdf84667bdc8e59af4e5b81d5f60a"
@@ -8271,6 +8280,13 @@ write@1.0.3:
   resolved "https://registry.yarnpkg.com/write/-/write-1.0.3.tgz#0800e14523b923a387e415123c865616aae0f5c3"
   dependencies:
     mkdirp "^0.5.1"
+
+ws@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-6.0.0.tgz#eaa494aded00ac4289d455bac8d84c7c651cef35"
+  integrity sha512-c2UlYcAZp1VS8AORtpq6y4RJIkJ9dQz18W32SpR/qXGfLDZ2jU4y4wKvvZwqbi7U6gxFQTeE+urMbXU/tsDy4w==
+  dependencies:
+    async-limiter "~1.0.0"
 
 ws@^1.1.0, ws@^1.1.5:
   version "1.1.5"

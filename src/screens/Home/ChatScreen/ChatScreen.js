@@ -15,9 +15,14 @@ export default class ChatScreen extends Component {
 
   render() {
     const { navigation }  = this.props;
-
-    return (
-      <View style={{ flex: 1, alignItems: 'center', paddingTop: 50, paddingHorizontal: 60 }}>
+    let content;
+    console.log(this.store.login);
+    if (this.store.login) {
+      content = <View style={{ flex: 1, alignItems: 'center' }}>
+        <Text>i'm Login View</Text>
+      </View>;
+    } else {
+      content = <View style={{ flex: 1, alignItems: 'center', paddingTop: 50, paddingHorizontal: 60 }}>
         <Text style={{ fontWeight: 'bold', fontSize: 26 }}>Start a Chat</Text>
         <Text style={{ fontSize: 16, textAlign: 'center', marginTop: 20 }}>
           Make new friends in a realtime one-on-one chat, Get matched, introduce yourself and chat, Afterwards, send an invite if you want to stay connected
@@ -38,7 +43,8 @@ export default class ChatScreen extends Component {
         >
           <Text style={{ color: '#ffffff' }}>Chat Now</Text>
         </TouchableOpacity>
-      </View>
-    )
+      </View>;
+    }
+    return content;
   }
 }
