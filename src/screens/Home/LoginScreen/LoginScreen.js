@@ -7,6 +7,7 @@ import { TextInputComp } from '../../../components';
 import Network from '../../../network';
 
 import * as Facebook  from 'expo-facebook';
+import Loading from "../../../components/Loading";
 
 @observer
 export default class LoginScreen extends Component {
@@ -16,6 +17,8 @@ export default class LoginScreen extends Component {
   }
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <View style={{ flex: 1, alignItems: 'center', paddingHorizontal: 10, backgroundColor: '#ffffff' }}>
         <View style={{ width: 100, height: 100, backgroundColor: 'red', margin: 10 }} />
@@ -57,7 +60,14 @@ export default class LoginScreen extends Component {
           <View style={{ width: 150 }}>
             <Button
               title={'Login'}
-              onPress={this.store.login.bind(this)}
+              onPress={() => {
+                try {
+                  this.store.login();
+                  this.props.navigation.popToTop();
+                } catch (e) {
+                  alert(e.message);
+                }
+              }}
             />
           </View>
         </View>
@@ -107,6 +117,23 @@ export default class LoginScreen extends Component {
         >
           <Text style={{ color: '#ffffff' }}>Sign Up with Phone</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("SignUpScreen")
+          }}
+          style={{
+            width: 200,
+            height: 50,
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 5,
+            backgroundColor: 'rgb(47,67,111)',
+            margin:10,
+          }}
+        >
+          <Text style={{ color: '#ffffff' }}>Sign Up</Text>
+        </TouchableOpacity>
+        <Loading visible={this.store.visible}/>
       </View>
     )
   }

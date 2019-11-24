@@ -1,5 +1,6 @@
 import querystring from 'querystring';
 import Response from "./Response";
+import {API_TOKEN} from "../../constant/PlatformConstant";
 
 export default class HttpClient {
   constructor(baseUrl, {
@@ -35,7 +36,9 @@ export default class HttpClient {
     const strParams = querystring.encode(params);
     let url = this.baseUrl.url + path + strParams;
     let options = rawOptions;
-    options.headers = {};
+    options.headers = {
+      "Api-Token": API_TOKEN,
+    };
     if (this.onRequest) {
       const args = this.onRequest(url, options);
       url = args.url;

@@ -78,6 +78,7 @@ class AKNetwork {
   onError(error) {
     console.log('--------------onError---------------');
     console.log(JSON.stringify(error, null, 2));
+    throw error;
   }
 }
 

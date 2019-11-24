@@ -11,6 +11,7 @@ import images from '../resource/images';
 
 import Home from '../screens/Home';
 import LoginScreen from "../screens/Home/LoginScreen/LoginScreen";
+import SignUpScreen from "../screens/Home/SignUpScreen/SignUpScreen";
 
 const routeConfigs = {
   Home: {
@@ -23,6 +24,12 @@ const routeConfigs = {
     screen: LoginScreen,
     navigationOptions: {
       title: 'Login',
+    },
+  },
+  SignUpScreen: {
+    screen: SignUpScreen,
+    navigationOptions: {
+      title: 'Sign Up',
     },
   },
 };

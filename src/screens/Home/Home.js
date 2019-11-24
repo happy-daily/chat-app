@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import ChatScreen from './ChatScreen';
-import PersonalScreen from './PersonalScreen';
+import PersonalScreen from './PersonalScreen/PersonalScreen';
 import ExploreScreen from "./ExploreScreen";
 
 const routeConfigs = {
