@@ -49,6 +49,7 @@ export default class PersonalScreen extends Component {
             source={{ uri: this.store.userInfo.profileUrl }}
             style={{ width: 80, height: 80, marginTop: 100 }}
           />
+          <Text style={{ fontSize: 18, marginTop: 20 }}>{this.store.userInfo.nickname}</Text>
           <Text style={{ fontSize: 18, marginTop: 20 }}>{this.store.userInfo.userId}</Text>
           <Loading visible={this.store.visible} />
         </View>

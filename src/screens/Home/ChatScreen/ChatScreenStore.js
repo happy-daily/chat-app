@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx';
 import SendBird, {User} from "sendbird";
-import { SEND_BIRD_APPID } from "../../../constant/Constants";
 import GlobalInfo from "../../../utils/GlobalInfo";
+import SBSingleInstance from "../../../utils/SBSingleInstance";
 
 export default class ChatScreenStore {
   @observable item = [];
@@ -21,7 +21,7 @@ export default class ChatScreenStore {
   userInfo: User = null;
 
   constructor() {
-    this.sb = new SendBird({ appId: SEND_BIRD_APPID });
+    this.sb = SBSingleInstance.getInstance();
   }
 
   @action

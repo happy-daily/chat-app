@@ -37,13 +37,13 @@ export default class ChatScreen extends Component {
     return (
       <TouchableOpacity
         onPress={() => {
-          this.props.navigation.navigate('', {
+          this.props.navigation.navigate('MessageScreen', {
             channel: item,
           });
           // this.store.getChannel(item.url)
         }}
         style={{
-          margin: 5,
+          margin: 10,
           flex: 1,
           flexDirection: 'row',
           alignItems: 'center',
@@ -51,9 +51,9 @@ export default class ChatScreen extends Component {
       >
         <Image
           source={{uri: item.coverUrl}}
-          style={{ width: 50, height: 50 }}
+          style={{ width: 70, height: 70 }}
         />
-        <Text style={{ marginLeft: 5 }}>
+        <Text style={{ marginLeft: 10, color: '#333333', fontSize: 16 }}>
           {item.name}
         </Text>
       </TouchableOpacity>

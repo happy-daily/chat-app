@@ -12,6 +12,7 @@ import images from '../resource/images';
 import Home from '../screens/Home';
 import LoginScreen from "../screens/Home/LoginScreen/LoginScreen";
 import SignUpScreen from "../screens/Home/SignUpScreen/SignUpScreen";
+import MessageScreen from "../screens/Home/MessageScreen/MessageScreen";
 
 const routeConfigs = {
   Home: {
@@ -31,6 +32,9 @@ const routeConfigs = {
     navigationOptions: {
       title: 'Sign Up',
     },
+  },
+  MessageScreen: {
+    screen: MessageScreen,
   },
 };
 

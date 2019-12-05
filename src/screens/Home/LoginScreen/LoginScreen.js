@@ -24,19 +24,19 @@ export default class LoginScreen extends Component {
         <View style={{ width: 100, height: 100, backgroundColor: 'red', margin: 10 }} />
         <Text style={{ fontWeight: 'bold', fontSize: 26 }}>Login</Text>
         <TextInputComp
-          placeholder={'Please input your user name'}
+          placeholder={'Please input your user id'}
           onChangeText={(text: string) => {
             this.store.setUserName(text);
           }}
           style={{ marginVertical: 10 }}
         />
-        <TextInputComp
-          placeholder={'Please input your password'}
-          onChangeText={(text: string) => {
-            this.store.setPassword(text);
-          }}
-          style={{ marginVertical: 10 }}
-        />
+        {/*<TextInputComp*/}
+        {/*  placeholder={'Please input your password'}*/}
+        {/*  onChangeText={(text: string) => {*/}
+        {/*    this.store.setPassword(text);*/}
+        {/*  }}*/}
+        {/*  style={{ marginVertical: 10 }}*/}
+        {/*/>*/}
         <View
           style={{
             width: '100%',

@@ -3,10 +3,11 @@ import { DeviceEventEmitter } from 'react-native';
 import SendBird from "sendbird";
 import {LOGIN_STATE_CHANGE, SEND_BIRD_APPID} from "../../../constant/Constants";
 import GlobalInfo from "../../../utils/GlobalInfo";
+import SBSingleInstance from "../../../utils/SBSingleInstance";
 
 
 export default class LoginScreenStore {
-  @observable userName: string = '';
+  @observable userId: string = '';
   @observable password: string = '';
   @observable remember: boolean = false;
 
@@ -16,9 +17,9 @@ export default class LoginScreenStore {
 
   }
 
-  setUserName(userName: string) {
-    this.userName = userName;
-    console.log(this.userName);
+  setUserName(userId: string) {
+    this.userId = userId;
+    console.log(this.userId);
   }
 
   setPassword(password: string) {
@@ -32,8 +33,8 @@ export default class LoginScreenStore {
 
   login() {
     this.visible = true;
-    const sb = new SendBird({ appId: SEND_BIRD_APPID });
-    sb.connect(this.userName, (user: SendBird.User, error: SendBird.SendBirdError) => {
+    const sb = SBSingleInstance.getInstance();
+    sb.connect(this.userId, (user: SendBird.User, error: SendBird.SendBirdError) => {
       this.visible = false;
       GlobalInfo.setUserInfo(user);
       if (error) {
