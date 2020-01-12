@@ -24,6 +24,9 @@ export default class TextInputComp extends Component<Props, State> {
       text: '',
     };
   }
+  clear() {
+    this.comp.clear()
+  }
 
   render() {
     const {
@@ -47,6 +50,7 @@ export default class TextInputComp extends Component<Props, State> {
           }}
         >
           <TextInput
+            ref={comp => this.comp = comp}
             placeholder={placeholder}
             value={this.state.text}
             onChangeText={(text: string) => {
